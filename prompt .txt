@@ -1,0 +1,59 @@
+
+
+ THIS IS A PROMPT U USE BEFORE YOU ASK GPT FOR HELP SO THAT HE GETS THE CONTEXT
+
+
+
+i have a project that includes building a desktop app for middle and high schools in algeria that generate automatically time tables , ive done this project before but it was in universitiy
+
+but the thing is the data changes when it comes to high and middle schools the times are :
+
+1st slot : 8-9
+2nd slot : 9-10
+3rd slot : 10-11
+4th slot : 11-12
+5th slot : 13h30 - 14h30
+6th alot : 14h30 - 15h30 
+7th slot : 15h30 - 16h30 
+
+and for the things they study are diffrent too for middle schools they have 4 years from ( 1st years to 4th years) and they study:
+
+-islamic coef 1
+-arabic coef 5
+-french coef 3
+-english coef2
+-math coef4
+- history 
+- and geographie
+both are one module ( coef 3 ) 
+
+- civil coef 1 
+- sport coef 1 
+- physics coef 2 
+- science coef 2 
+
+and for year there is more than 1 section , they are called M , for example 4M1 means the 1st M class in 4th year 
+
+2M3 means the 3rd M class in 2nd years
+
+for every year there is 3 M clsses , all the clssed in middle schools study the same 
+
+
+
+now high school is a bit diffrent :
+
+there are 3 years (1st , 2nd and 3rd ) 
+1st yers are devided into ( scientifique , leterature ) and there is 5M for every one 
+scientifique and leterature : math , arabic , french , english , science , physics , islamic , history and geography , sports 
+the diff remains in theh coeff 
+
+
+in their 2nd years students will pick their specialite 
+scientifique can pick : matheleme ( 1 M) , math technique( 1 M)  , scientifique(3 M) , gestion (2 M)
+leterature : forgein langauges (3 M ), philosophy (2 M)
+
+and this will continue in their 3rd year 
+there is no TD or TP , only cours (lectures) 
+
+
+
