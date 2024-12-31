@@ -2,12 +2,13 @@ import random
 import logging
 
 logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 class ScheduleGenerator:
     def __init__(self, level, year, section, rooms, teachers):
         """
         :param level: 'middle_school' or 'high_school'
-        :param year: Year data
+        :param year: Year number
         :param section: Section data
         :param rooms: List of rooms
         :param teachers: List of teachers
@@ -18,104 +19,126 @@ class ScheduleGenerator:
         self.rooms = rooms
         self.teachers = teachers
         self.schedule = []
-        self.assigned_lectures = set()
         self.teacher_commitments = {}
-        self.room_availability = {}
+        self.room = self.get_assigned_room()
         self.time_slots = self.define_time_slots()
         self.init_availability()
 
     def define_time_slots(self):
         return {
-            1: "8:00 - 9:00",
-            2: "9:00 - 10:00",
-            3: "10:00 - 11:00",
-            4: "11:00 - 12:00",
-            5: "13:30 - 14:30",
-            6: "14:30 - 15:30",
-            7: "15:30 - 16:30"
+            1: {"start": "8:00", "end": "9:00"},
+            2: {"start": "9:00", "end": "10:00"},
+            3: {"start": "10:00", "end": "11:00"},
+            4: {"start": "11:00", "end": "12:00"},
+            5: {"start": "13:30", "end": "14:30"},
+            6: {"start": "14:30", "end": "15:30"},
+            7: {"start": "15:30", "end": "16:30"},
+            8: {"start": "16:30", "end": "17:30"}
         }
 
     def init_availability(self):
         days_of_week = ["lundi", "mardi", "mercredi", "jeudi", "vendredi"]
-        for room in self.rooms:
-            self.room_availability[room['name']] = {day: [True] * len(self.time_slots) for day in days_of_week}
         for teacher in self.teachers:
-            self.teacher_commitments[teacher['name']] = {day: [True] * len(self.time_slots) for day in days_of_week}
+            self.teacher_commitments[teacher['name']] = {day: [True]*len(self.time_slots) for day in days_of_week}
 
-    def find_suitable_teacher(self, subject_name, day, slot):
-        qualified_teachers = [
+    def get_assigned_room(self):
+        section_room_prefix = "MS_Room_" if self.level == "middle_school" else "HS_Room_"
+        section_name = self.section['section']
+        for room in self.rooms:
+            if room['name'] == f"{section_room_prefix}{section_name}":
+                return room['name']
+        logger.error(f"No room assigned to section {section_name}")
+        return None
+
+    def find_suitable_teacher(self, subject_name):
+        suitable_teachers = [
             teacher for teacher in self.teachers
             if any(s['name'].lower() == subject_name.lower() for s in teacher['subjects'])
         ]
-        random.shuffle(qualified_teachers)
-        for teacher in qualified_teachers:
-            if self.teacher_commitments[teacher['name']][day][slot - 1]:
-                return teacher['name']
-        return None
+        random.shuffle(suitable_teachers)
+        return suitable_teachers
 
-    def find_available_room(self, subject_name, day, slot):
-        suitable_rooms = [
-            room for room in self.rooms
-            if room.get('type', 'general') == 'general'
-        ]
-        random.shuffle(suitable_rooms)
-        for room in suitable_rooms:
-            if self.room_availability[room['name']][day][slot - 1]:
-                return room['name']
-        return None
+    def assign_session(self, subject, day, slot):
+        subject_name = subject['name']
+        coef = subject['coef']
+        if subject_name.lower() == "sport":
+            possible_slot_pairs = [
+                (1,2),  # 8:00 -10:00
+                (3,4),  # 10:00 -12:00
+                (5,6),  # 13:30 -15:30
+                (7,8)   # 15:30 -17:30
+            ]
+            slot_pair = None
+            for pair in possible_slot_pairs:
+                if slot in pair:
+                    slot_pair = pair
+                    break
+            if not slot_pair:
+                logger.warning(f"Slot {slot} is not valid for sport sessions.")
+                return False
 
-    def is_slot_conflict(self, section_name, day, slot, subject, teacher):
-        for session in self.schedule:
-            if session['day'] == day and session['slot'] == slot:
-                if session['teacher'] == teacher:
+            suitable_teachers = self.find_suitable_teacher(subject_name)
+            for teacher in suitable_teachers:
+                if all(self.teacher_commitments[teacher['name']][day][s-1] for s in slot_pair):
+                    self.schedule.append({
+                        "day": day,
+                        "room": self.room,
+                        "subject": subject_name,
+                        "teacher": teacher['name'],
+                        "time": f"{self.time_slots[slot_pair[0]]['start']} - {self.time_slots[slot_pair[1]]['end']}",
+                        "slot": f"{slot_pair[0]}-{slot_pair[1]}",
+                        "section": self.section['section'],
+                        "stream": self.section.get('stream')
+                    })
+                    for s in slot_pair:
+                        self.teacher_commitments[teacher['name']][day][s-1] = False
                     return True
-                if session['section'] == section_name:
+            logger.warning(f"No available teacher for sport on {day} during slots {slot_pair}.")
+            return False
+        else:
+            suitable_teachers = self.find_suitable_teacher(subject_name)
+            for teacher in suitable_teachers:
+                if self.teacher_commitments[teacher['name']][day][slot-1]:
+                    self.schedule.append({
+                        "day": day,
+                        "room": self.room,
+                        "subject": subject_name,
+                        "teacher": teacher['name'],
+                        "time": f"{self.time_slots[slot]['start']} - {self.time_slots[slot]['end']}",
+                        "slot": slot,
+                        "section": self.section['section'],
+                        "stream": self.section.get('stream')
+                    })
+                    self.teacher_commitments[teacher['name']][day][slot-1] = False
                     return True
-                if self.level == 'high_school' and 'stream' in session and 'stream' in session:
-                    if session.get('stream') != session.get('stream'):
-                        return True
-        return False
-
-    def assign_session(self, section_name, stream, subject):
-        days_of_week = ["lundi", "mardi", "mercredi", "jeudi", "vendredi"]
-        random_day = random.choice(days_of_week)
-        available_slots = list(self.time_slots.keys())
-
-        for slot in available_slots:
-            if self.is_slot_available(slot, random_day):
-                teacher = self.find_suitable_teacher(subject['name'], random_day, slot)
-                if not teacher:
-                    continue
-                if self.is_slot_conflict(section_name, random_day, slot, subject, teacher):
-                    continue
-                room_name = self.find_available_room(subject['name'], random_day, slot)
-                if not room_name:
-                    continue
-                self.schedule.append({
-                    'day': random_day,
-                    'room': room_name,
-                    'subject': subject['name'],
-                    'teacher': teacher,
-                    'time': self.time_slots[slot],
-                    'slot': slot,
-                    'section': section_name,
-                    'stream': stream
-                })
-                self.update_availability(room_name, teacher, random_day, slot)
-                break
-
-    def is_slot_available(self, slot, day):
-        return any(self.room_availability[room][day][slot - 1] for room in self.room_availability) and \
-               any(self.teacher_commitments[teacher][day][slot - 1] for teacher in self.teacher_commitments)
-
-    def update_availability(self, room_name, teacher_name, day, slot):
-        self.room_availability[room_name][day][slot - 1] = False
-        if teacher_name:
-            self.teacher_commitments[teacher_name][day][slot - 1] = False
+            logger.warning(f"No available teacher for {subject_name} on {day} during slot {slot}.")
+            return False
 
     def generate_schedule(self):
-        for subject in self.section['subjects']:
-            stream = self.section.get('stream') if self.level == 'high_school' else None
-            for _ in range(subject['coef']):
-                self.assign_session(self.section['section'], stream, subject)
+        subjects = self.section['subjects']
+        random.shuffle(subjects)
+        for subject in subjects:
+            coef = subject['coef']
+            for _ in range(coef):
+                assigned = False
+                attempts = 0
+                max_attempts = 100
+                while not assigned and attempts < max_attempts:
+                    day = random.choice(["lundi", "mardi", "mercredi", "jeudi", "vendredi"])
+                    if subject['name'].lower() == "sport":
+                        possible_slot_pairs = [
+                            (1,2),
+                            (3,4),
+                            (5,6),
+                            (7,8)
+                        ]
+                        slot_pair = random.choice(possible_slot_pairs)
+                        slot = slot_pair[0]
+                        assigned = self.assign_session(subject, day, slot)
+                    else:
+                        slot = random.randint(1,8)
+                        assigned = self.assign_session(subject, day, slot)
+                    attempts +=1
+                if not assigned:
+                    logger.error(f"Failed to assign session for {subject['name']} after {max_attempts} attempts.")
         return self.schedule

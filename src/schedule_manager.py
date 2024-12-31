@@ -14,15 +14,26 @@ class ScheduleManager:
     def generate_schedules(self):
         schedules = {}
 
+        middle_teachers = [teacher for teacher in self.teachers if teacher['name'].startswith("MS_Teacher_")]
+        high_teachers = [teacher for teacher in self.teachers if teacher['name'].startswith("HS_Teacher_")]
+
         if 'middle_school' in self.data:
-            schedules['middle_school'] = self.generate_level_schedule('middle_school', self.data['middle_school'])
+            schedules['middle_school'] = self.generate_level_schedule(
+                'middle_school',
+                self.data['middle_school'],
+                middle_teachers
+            )
 
         if 'high_school' in self.data:
-            schedules['high_school'] = self.generate_level_schedule('high_school', self.data['high_school'])
+            schedules['high_school'] = self.generate_level_schedule(
+                'high_school',
+                self.data['high_school'],
+                high_teachers
+            )
 
         return schedules
 
-    def generate_level_schedule(self, level, level_data):
+    def generate_level_schedule(self, level, level_data, teachers):
         level_schedule = {"years": []}
         for year_entry in level_data['years']:
             year_number = year_entry['year']
@@ -34,14 +45,14 @@ class ScheduleManager:
             for section_entry in year_entry['sections']:
                 section_name = section_entry['section']
                 subjects = section_entry['subjects']
-                stream = section_entry.get('stream') if level == 'high_school' else None
+                stream = section_entry.get('stream')
 
                 generator = ScheduleGenerator(
                     level=level,
                     year=year_number,
                     section=section_entry,
                     rooms=self.rooms,
-                    teachers=self.teachers
+                    teachers=teachers
                 )
                 schedule = generator.generate_schedule()
 

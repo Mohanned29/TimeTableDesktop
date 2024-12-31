@@ -27,6 +27,7 @@ def generate_schedule():
 
         schedule_manager = ScheduleManager(data, rooms, teachers)
         schedules = schedule_manager.generate_schedules()
+
         logger.info("Successfully generated schedules")
 
         return jsonify(schedules), 200
