@@ -1,0 +1,2632 @@
+{
+  "middle_school": {
+    "years": [
+      {
+        "year": 1,
+        "sections": [
+          {
+            "section": "1M1",
+            "subjects": [
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Civil",
+                "coef": 1
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              }
+            ]
+          },
+          {
+            "section": "1M2",
+            "subjects": [
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Civil",
+                "coef": 1
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              }
+            ]
+          },
+          {
+            "section": "1M3",
+            "subjects": [
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Civil",
+                "coef": 1
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2,
+        "sections": [
+          {
+            "section": "2M1",
+            "subjects": [
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Civil",
+                "coef": 1
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              }
+            ]
+          },
+          {
+            "section": "2M2",
+            "subjects": [
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Civil",
+                "coef": 1
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              }
+            ]
+          },
+          {
+            "section": "2M3",
+            "subjects": [
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Civil",
+                "coef": 1
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "year": 3,
+        "sections": [
+          {
+            "section": "3M1",
+            "subjects": [
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Civil",
+                "coef": 1
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              }
+            ]
+          },
+          {
+            "section": "3M2",
+            "subjects": [
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Civil",
+                "coef": 1
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              }
+            ]
+          },
+          {
+            "section": "3M3",
+            "subjects": [
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Civil",
+                "coef": 1
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "year": 4,
+        "sections": [
+          {
+            "section": "4M1",
+            "subjects": [
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Civil",
+                "coef": 1
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              }
+            ]
+          },
+          {
+            "section": "4M2",
+            "subjects": [
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Civil",
+                "coef": 1
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              }
+            ]
+          },
+          {
+            "section": "4M3",
+            "subjects": [
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Civil",
+                "coef": 1
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "high_school": {
+    "years": [
+      {
+        "year": 1,
+        "sections": [
+          {
+            "section": "1S1",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "1S2",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "1S3",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "1S4",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "1S5",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "1L1",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "1L2",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "1L3",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "1L4",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "1L5",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "year": 2,
+        "sections": [
+          {
+            "section": "2S1",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "2S2",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "2S3",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "2S4",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "2S5",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "2L1",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "2L2",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "2L3",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "2L4",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "2L5",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "year": 3,
+        "sections": [
+          {
+            "section": "3S1",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "3S2",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "3S3",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "3S4",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "3S5",
+            "stream": "scientifique",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 5
+              },
+              {
+                "name": "Arabic",
+                "coef": 3
+              },
+              {
+                "name": "French",
+                "coef": 2
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 4
+              },
+              {
+                "name": "Physics",
+                "coef": 4
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "3L1",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "3L2",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "3L3",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "3L4",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          },
+          {
+            "section": "3L5",
+            "stream": "litterature",
+            "subjects": [
+              {
+                "name": "Math",
+                "coef": 4
+              },
+              {
+                "name": "Arabic",
+                "coef": 5
+              },
+              {
+                "name": "French",
+                "coef": 3
+              },
+              {
+                "name": "English",
+                "coef": 2
+              },
+              {
+                "name": "Science",
+                "coef": 2
+              },
+              {
+                "name": "Physics",
+                "coef": 2
+              },
+              {
+                "name": "Islamic",
+                "coef": 1
+              },
+              {
+                "name": "History and Geography",
+                "coef": 3
+              },
+              {
+                "name": "Sport",
+                "coef": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "teachers": [
+    {
+      "name": "Teacher_1",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "Math"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_2",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Sport"
+        },
+        {
+          "name": "Math"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_3",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_4",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "Sport"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_5",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Sport"
+        },
+        {
+          "name": "Arabic"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_6",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "History and Geography"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_7",
+      "subjects": [
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Arabic"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_8",
+      "subjects": [
+        {
+          "name": "Science"
+        },
+        {
+          "name": "Arabic"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_9",
+      "subjects": [
+        {
+          "name": "Science"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_10",
+      "subjects": [
+        {
+          "name": "Science"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "Math"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_11",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "Math"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_12",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Math"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_13",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Sport"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_14",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Sport"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_15",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "Sport"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_16",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Arabic"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_17",
+      "subjects": [
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Science"
+        },
+        {
+          "name": "Arabic"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_18",
+      "subjects": [
+        {
+          "name": "Arabic"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_19",
+      "subjects": [
+        {
+          "name": "Science"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_20",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Science"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "Math"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_21",
+      "subjects": [
+        {
+          "name": "English"
+        },
+        {
+          "name": "Math"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_22",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Math"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_23",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "Sport"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_24",
+      "subjects": [
+        {
+          "name": "Sport"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_25",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Sport"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_26",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Arabic"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_27",
+      "subjects": [
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Arabic"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_28",
+      "subjects": [
+        {
+          "name": "Science"
+        },
+        {
+          "name": "Arabic"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_29",
+      "subjects": [
+        {
+          "name": "Science"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "Math"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_30",
+      "subjects": [
+        {
+          "name": "Science"
+        },
+        {
+          "name": "English"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_31",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "Math"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_32",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Sport"
+        },
+        {
+          "name": "Math"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_33",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_34",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "Sport"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_35",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Sport"
+        },
+        {
+          "name": "Arabic"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_36",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "History and Geography"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_37",
+      "subjects": [
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Arabic"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_38",
+      "subjects": [
+        {
+          "name": "Science"
+        },
+        {
+          "name": "Arabic"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_39",
+      "subjects": [
+        {
+          "name": "Science"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_40",
+      "subjects": [
+        {
+          "name": "Science"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "Math"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_41",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "Math"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_42",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Math"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_43",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Sport"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_44",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Sport"
+        },
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_45",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "Sport"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_46",
+      "subjects": [
+        {
+          "name": "Islamic"
+        },
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Arabic"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_47",
+      "subjects": [
+        {
+          "name": "History and Geography"
+        },
+        {
+          "name": "Science"
+        },
+        {
+          "name": "Arabic"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_48",
+      "subjects": [
+        {
+          "name": "Arabic"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_49",
+      "subjects": [
+        {
+          "name": "Science"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "Teacher_50",
+      "subjects": [
+        {
+          "name": "Physics"
+        },
+        {
+          "name": "Science"
+        },
+        {
+          "name": "English"
+        },
+        {
+          "name": "Math"
+        }
+      ]
+    }
+  ],
+  "rooms": [
+    {
+      "name": "Room_1",
+      "type": "sport"
+    },
+    {
+      "name": "Room_2",
+      "type": "general"
+    },
+    {
+      "name": "Room_3",
+      "type": "general"
+    },
+    {
+      "name": "Room_4",
+      "type": "general"
+    },
+    {
+      "name": "Room_5",
+      "type": "science"
+    },
+    {
+      "name": "Room_6",
+      "type": "sport"
+    },
+    {
+      "name": "Room_7",
+      "type": "general"
+    },
+    {
+      "name": "Room_8",
+      "type": "general"
+    },
+    {
+      "name": "Room_9",
+      "type": "general"
+    },
+    {
+      "name": "Room_10",
+      "type": "science"
+    },
+    {
+      "name": "Room_11",
+      "type": "sport"
+    },
+    {
+      "name": "Room_12",
+      "type": "general"
+    },
+    {
+      "name": "Room_13",
+      "type": "general"
+    },
+    {
+      "name": "Room_14",
+      "type": "general"
+    },
+    {
+      "name": "Room_15",
+      "type": "science"
+    },
+    {
+      "name": "Room_16",
+      "type": "sport"
+    },
+    {
+      "name": "Room_17",
+      "type": "general"
+    },
+    {
+      "name": "Room_18",
+      "type": "general"
+    },
+    {
+      "name": "Room_19",
+      "type": "general"
+    },
+    {
+      "name": "Room_20",
+      "type": "science"
+    }
+  ]
+}
