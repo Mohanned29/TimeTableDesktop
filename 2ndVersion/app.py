@@ -13,7 +13,6 @@ def generate_schedule():
     if not data:
         logger.error("No JSON payload received.")
         abort(400, description="Request body is missing or not in JSON format")
-
     try:
         if 'teachers' not in data or not data['teachers']:
             logger.error("Teachers data is missing or empty.")
@@ -24,17 +23,13 @@ def generate_schedule():
         if 'middle_school' not in data and 'high_school' not in data:
             logger.error("Neither middle_school nor high_school data provided.")
             abort(400, description="At least one of 'middle_school' or 'high_school' must be provided")
-
         schedule_manager = ScheduleManager(data)
         schedules = schedule_manager.generate_schedules()
-
         if not schedules:
             logger.error("Failed to generate schedules due to internal error.")
             abort(500, description="Failed to generate schedules due to internal error.")
-
         logger.info("Successfully generated schedules.")
         return jsonify(schedules), 200
-
     except KeyError as e:
         logger.error(f"Key error: {str(e)}")
         abort(400, description=f"Missing key in data: {str(e)}")

@@ -1844,18 +1844,18 @@
   },
   "teachers": [
     {
-      "name": "MS_Teacher_English",
-      "subjects": [
-        {
-          "name": "English"
-        }
-      ]
-    },
-    {
       "name": "MS_Teacher_Sport",
       "subjects": [
         {
           "name": "Sport"
+        }
+      ]
+    },
+    {
+      "name": "MS_Teacher_English",
+      "subjects": [
+        {
+          "name": "English"
         }
       ]
     },
@@ -1868,34 +1868,10 @@
       ]
     },
     {
-      "name": "MS_Teacher_History_and_Geography",
-      "subjects": [
-        {
-          "name": "History and Geography"
-        }
-      ]
-    },
-    {
       "name": "MS_Teacher_Math",
       "subjects": [
         {
           "name": "Math"
-        }
-      ]
-    },
-    {
-      "name": "MS_Teacher_Physics",
-      "subjects": [
-        {
-          "name": "Physics"
-        }
-      ]
-    },
-    {
-      "name": "MS_Teacher_Science",
-      "subjects": [
-        {
-          "name": "Science"
         }
       ]
     },
@@ -1908,10 +1884,10 @@
       ]
     },
     {
-      "name": "MS_Teacher_French",
+      "name": "MS_Teacher_History_and_Geography",
       "subjects": [
         {
-          "name": "French"
+          "name": "History and Geography"
         }
       ]
     },
@@ -1924,18 +1900,42 @@
       ]
     },
     {
-      "name": "MS_Teacher_English_0",
+      "name": "MS_Teacher_Science",
       "subjects": [
         {
-          "name": "English"
+          "name": "Science"
         }
       ]
     },
     {
-      "name": "MS_Teacher_Sport_1",
+      "name": "MS_Teacher_French",
+      "subjects": [
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "MS_Teacher_Physics",
+      "subjects": [
+        {
+          "name": "Physics"
+        }
+      ]
+    },
+    {
+      "name": "MS_Teacher_Sport_0",
       "subjects": [
         {
           "name": "Sport"
+        }
+      ]
+    },
+    {
+      "name": "MS_Teacher_English_1",
+      "subjects": [
+        {
+          "name": "English"
         }
       ]
     },
@@ -1948,15 +1948,7 @@
       ]
     },
     {
-      "name": "MS_Teacher_History and Geography_3",
-      "subjects": [
-        {
-          "name": "History and Geography"
-        }
-      ]
-    },
-    {
-      "name": "MS_Teacher_Math_4",
+      "name": "MS_Teacher_Math_3",
       "subjects": [
         {
           "name": "Math"
@@ -1964,26 +1956,34 @@
       ]
     },
     {
-      "name": "MS_Teacher_Physics_5",
-      "subjects": [
-        {
-          "name": "Physics"
-        }
-      ]
-    },
-    {
-      "name": "MS_Teacher_Science_6",
-      "subjects": [
-        {
-          "name": "Science"
-        }
-      ]
-    },
-    {
-      "name": "MS_Teacher_Islamic_7",
+      "name": "MS_Teacher_Islamic_4",
       "subjects": [
         {
           "name": "Islamic"
+        }
+      ]
+    },
+    {
+      "name": "MS_Teacher_History and Geography_5",
+      "subjects": [
+        {
+          "name": "History and Geography"
+        }
+      ]
+    },
+    {
+      "name": "MS_Teacher_Civil_6",
+      "subjects": [
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "MS_Teacher_Science_7",
+      "subjects": [
+        {
+          "name": "Science"
         }
       ]
     },
@@ -1996,26 +1996,26 @@
       ]
     },
     {
-      "name": "MS_Teacher_Civil_9",
+      "name": "MS_Teacher_Physics_9",
       "subjects": [
         {
-          "name": "Civil"
+          "name": "Physics"
         }
       ]
     },
     {
-      "name": "MS_Teacher_English_10",
-      "subjects": [
-        {
-          "name": "English"
-        }
-      ]
-    },
-    {
-      "name": "MS_Teacher_Sport_11",
+      "name": "MS_Teacher_Sport_10",
       "subjects": [
         {
           "name": "Sport"
+        }
+      ]
+    },
+    {
+      "name": "MS_Teacher_English_11",
+      "subjects": [
+        {
+          "name": "English"
         }
       ]
     },
@@ -2028,15 +2028,7 @@
       ]
     },
     {
-      "name": "MS_Teacher_History and Geography_13",
-      "subjects": [
-        {
-          "name": "History and Geography"
-        }
-      ]
-    },
-    {
-      "name": "MS_Teacher_Math_14",
+      "name": "MS_Teacher_Math_13",
       "subjects": [
         {
           "name": "Math"
@@ -2044,26 +2036,34 @@
       ]
     },
     {
-      "name": "MS_Teacher_Physics_15",
-      "subjects": [
-        {
-          "name": "Physics"
-        }
-      ]
-    },
-    {
-      "name": "MS_Teacher_Science_16",
-      "subjects": [
-        {
-          "name": "Science"
-        }
-      ]
-    },
-    {
-      "name": "MS_Teacher_Islamic_17",
+      "name": "MS_Teacher_Islamic_14",
       "subjects": [
         {
           "name": "Islamic"
+        }
+      ]
+    },
+    {
+      "name": "MS_Teacher_History and Geography_15",
+      "subjects": [
+        {
+          "name": "History and Geography"
+        }
+      ]
+    },
+    {
+      "name": "MS_Teacher_Civil_16",
+      "subjects": [
+        {
+          "name": "Civil"
+        }
+      ]
+    },
+    {
+      "name": "MS_Teacher_Science_17",
+      "subjects": [
+        {
+          "name": "Science"
         }
       ]
     },
@@ -2076,18 +2076,10 @@
       ]
     },
     {
-      "name": "MS_Teacher_Civil_19",
+      "name": "MS_Teacher_Physics_19",
       "subjects": [
         {
-          "name": "Civil"
-        }
-      ]
-    },
-    {
-      "name": "HS_Teacher_English",
-      "subjects": [
-        {
-          "name": "English"
+          "name": "Physics"
         }
       ]
     },
@@ -2100,18 +2092,10 @@
       ]
     },
     {
-      "name": "HS_Teacher_Arabic",
+      "name": "HS_Teacher_English",
       "subjects": [
         {
-          "name": "Arabic"
-        }
-      ]
-    },
-    {
-      "name": "HS_Teacher_History_and_Geography",
-      "subjects": [
-        {
-          "name": "History and Geography"
+          "name": "English"
         }
       ]
     },
@@ -2124,10 +2108,10 @@
       ]
     },
     {
-      "name": "HS_Teacher_Physics",
+      "name": "HS_Teacher_Arabic",
       "subjects": [
         {
-          "name": "Physics"
+          "name": "Arabic"
         }
       ]
     },
@@ -2148,6 +2132,14 @@
       ]
     },
     {
+      "name": "HS_Teacher_History_and_Geography",
+      "subjects": [
+        {
+          "name": "History and Geography"
+        }
+      ]
+    },
+    {
       "name": "HS_Teacher_French",
       "subjects": [
         {
@@ -2156,47 +2148,7 @@
       ]
     },
     {
-      "name": "HS_Teacher_English_0",
-      "subjects": [
-        {
-          "name": "English"
-        }
-      ]
-    },
-    {
-      "name": "HS_Teacher_Sport_1",
-      "subjects": [
-        {
-          "name": "Sport"
-        }
-      ]
-    },
-    {
-      "name": "HS_Teacher_Arabic_2",
-      "subjects": [
-        {
-          "name": "Arabic"
-        }
-      ]
-    },
-    {
-      "name": "HS_Teacher_History and Geography_3",
-      "subjects": [
-        {
-          "name": "History and Geography"
-        }
-      ]
-    },
-    {
-      "name": "HS_Teacher_Math_4",
-      "subjects": [
-        {
-          "name": "Math"
-        }
-      ]
-    },
-    {
-      "name": "HS_Teacher_Physics_5",
+      "name": "HS_Teacher_Physics",
       "subjects": [
         {
           "name": "Physics"
@@ -2204,39 +2156,7 @@
       ]
     },
     {
-      "name": "HS_Teacher_Science_6",
-      "subjects": [
-        {
-          "name": "Science"
-        }
-      ]
-    },
-    {
-      "name": "HS_Teacher_Islamic_7",
-      "subjects": [
-        {
-          "name": "Islamic"
-        }
-      ]
-    },
-    {
-      "name": "HS_Teacher_French_8",
-      "subjects": [
-        {
-          "name": "French"
-        }
-      ]
-    },
-    {
-      "name": "HS_Teacher_English_9",
-      "subjects": [
-        {
-          "name": "English"
-        }
-      ]
-    },
-    {
-      "name": "HS_Teacher_Sport_10",
+      "name": "HS_Teacher_Sport_0",
       "subjects": [
         {
           "name": "Sport"
@@ -2244,23 +2164,15 @@
       ]
     },
     {
-      "name": "HS_Teacher_Arabic_11",
+      "name": "HS_Teacher_English_1",
       "subjects": [
         {
-          "name": "Arabic"
+          "name": "English"
         }
       ]
     },
     {
-      "name": "HS_Teacher_History and Geography_12",
-      "subjects": [
-        {
-          "name": "History and Geography"
-        }
-      ]
-    },
-    {
-      "name": "HS_Teacher_Math_13",
+      "name": "HS_Teacher_Math_2",
       "subjects": [
         {
           "name": "Math"
@@ -2268,15 +2180,15 @@
       ]
     },
     {
-      "name": "HS_Teacher_Physics_14",
+      "name": "HS_Teacher_Arabic_3",
       "subjects": [
         {
-          "name": "Physics"
+          "name": "Arabic"
         }
       ]
     },
     {
-      "name": "HS_Teacher_Science_15",
+      "name": "HS_Teacher_Science_4",
       "subjects": [
         {
           "name": "Science"
@@ -2284,7 +2196,7 @@
       ]
     },
     {
-      "name": "HS_Teacher_Islamic_16",
+      "name": "HS_Teacher_Islamic_5",
       "subjects": [
         {
           "name": "Islamic"
@@ -2292,7 +2204,15 @@
       ]
     },
     {
-      "name": "HS_Teacher_French_17",
+      "name": "HS_Teacher_History and Geography_6",
+      "subjects": [
+        {
+          "name": "History and Geography"
+        }
+      ]
+    },
+    {
+      "name": "HS_Teacher_French_7",
       "subjects": [
         {
           "name": "French"
@@ -2300,15 +2220,15 @@
       ]
     },
     {
-      "name": "HS_Teacher_English_18",
+      "name": "HS_Teacher_Physics_8",
       "subjects": [
         {
-          "name": "English"
+          "name": "Physics"
         }
       ]
     },
     {
-      "name": "HS_Teacher_Sport_19",
+      "name": "HS_Teacher_Sport_9",
       "subjects": [
         {
           "name": "Sport"
@@ -2316,10 +2236,90 @@
       ]
     },
     {
-      "name": "HS_Teacher_Arabic_20",
+      "name": "HS_Teacher_English_10",
+      "subjects": [
+        {
+          "name": "English"
+        }
+      ]
+    },
+    {
+      "name": "HS_Teacher_Math_11",
+      "subjects": [
+        {
+          "name": "Math"
+        }
+      ]
+    },
+    {
+      "name": "HS_Teacher_Arabic_12",
       "subjects": [
         {
           "name": "Arabic"
+        }
+      ]
+    },
+    {
+      "name": "HS_Teacher_Science_13",
+      "subjects": [
+        {
+          "name": "Science"
+        }
+      ]
+    },
+    {
+      "name": "HS_Teacher_Islamic_14",
+      "subjects": [
+        {
+          "name": "Islamic"
+        }
+      ]
+    },
+    {
+      "name": "HS_Teacher_History and Geography_15",
+      "subjects": [
+        {
+          "name": "History and Geography"
+        }
+      ]
+    },
+    {
+      "name": "HS_Teacher_French_16",
+      "subjects": [
+        {
+          "name": "French"
+        }
+      ]
+    },
+    {
+      "name": "HS_Teacher_Physics_17",
+      "subjects": [
+        {
+          "name": "Physics"
+        }
+      ]
+    },
+    {
+      "name": "HS_Teacher_Sport_18",
+      "subjects": [
+        {
+          "name": "Sport"
+        }
+      ]
+    },
+    {
+      "name": "HS_Teacher_English_19",
+      "subjects": [
+        {
+          "name": "English"
+        }
+      ]
+    },
+    {
+      "name": "HS_Teacher_Math_20",
+      "subjects": [
+        {
+          "name": "Math"
         }
       ]
     }
