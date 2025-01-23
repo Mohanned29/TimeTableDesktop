@@ -40,12 +40,16 @@ class ScheduleGenerator:
         }.get(slot, {"start": "Unknown", "end": "Unknown"})
 
     def find_suitable_teacher(self, subject_name):
+        normalized_subject = subject_name.strip().lower()
         suitable_teachers = [
             teacher for teacher in self.teachers
-            if any(s['name'].strip().lower() == subject_name.strip().lower() for s in teacher['subjects'])
+            if any(s['name'].strip().lower() == normalized_subject for s in teacher['subjects'])
         ]
         suitable_teacher_indices = [self.teacher_map[teacher['name']] for teacher in suitable_teachers]
-        suitable_teacher_indices.append(self.teacher_map["No teacher available"])
+        if suitable_teacher_indices:
+            suitable_teacher_indices.append(self.teacher_map["No teacher available"])
+        else:
+            suitable_teacher_indices = [self.teacher_map["No teacher available"]]
         return suitable_teacher_indices
 
     def generate_schedule(self):
@@ -81,9 +85,12 @@ class ScheduleGenerator:
             no_teacher_vars.append(no_teacher_var)
 
         for idx, (day_var, slot_var, teacher_var) in enumerate(session_vars):
-            subject_name = session_teachers[idx].lower()
+            subject_name = session_teachers[idx]
             suitable_teachers = self.find_suitable_teacher(subject_name)
-            self.model.AddAllowedAssignments([teacher_var], [[t] for t in suitable_teachers])
+            if suitable_teachers:
+                self.model.AddAllowedAssignments([teacher_var], [[t] for t in suitable_teachers])
+            else:
+                self.model.Add(teacher_var == self.teacher_map["No teacher available"])
 
         for t in range(self.num_teachers):
             for d in range(num_days):
