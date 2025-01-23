@@ -52,6 +52,7 @@ class ScheduleGenerator:
         sessions = []
         session_vars = []
         session_teachers = []
+        no_teacher_vars = []
 
         days = ["dimanche", "lundi", "mardi", "mercredi", "jeudi"]
         num_days = len(days)
@@ -72,8 +73,12 @@ class ScheduleGenerator:
             day_var = self.model.NewIntVar(0, num_days - 1, f'session_{idx}_day')
             slot_var = self.model.NewIntVar(1, num_slots, f'session_{idx}_slot')
             teacher_var = self.model.NewIntVar(0, self.num_teachers - 1, f'session_{idx}_teacher')
+            no_teacher_var = self.model.NewBoolVar(f'session_{idx}_no_teacher')
+            self.model.Add(teacher_var == self.teacher_map["No teacher available"]).OnlyEnforceIf(no_teacher_var)
+            self.model.Add(teacher_var != self.teacher_map["No teacher available"]).OnlyEnforceIf(no_teacher_var.Not())
             session_vars.append((day_var, slot_var, teacher_var))
             session_teachers.append(session['name'])
+            no_teacher_vars.append(no_teacher_var)
 
         for idx, (day_var, slot_var, teacher_var) in enumerate(session_vars):
             subject_name = session_teachers[idx].lower()
@@ -109,6 +114,8 @@ class ScheduleGenerator:
                 ]
                 possible_start_slots = [pair[0] for pair in allowed_slot_pairs]
                 self.model.AddAllowedAssignments([slot_var], [[s] for s in possible_start_slots])
+
+        self.model.Minimize(sum(no_teacher_vars))
 
         status = self.solver.Solve(self.model)
 
