@@ -1,4 +1,3 @@
-
 from src.schedule_generator import ScheduleGenerator
 import logging
 
@@ -7,17 +6,12 @@ logger = logging.getLogger(__name__)
 
 class ScheduleManager:
     def __init__(self, data):
-
         self.data = data
         self.rooms = data.get('rooms', [])
         self.teachers = data.get('teachers', [])
 
     def generate_schedules(self):
-        """
-        Generate schedules for both middle and high schools.
-        """
         schedules = {}
-
         middle_teachers = [teacher for teacher in self.teachers if teacher['name'].startswith("MS_Teacher_")]
         high_teachers = [teacher for teacher in self.teachers if teacher['name'].startswith("HS_Teacher_")]
 
@@ -40,7 +34,6 @@ class ScheduleManager:
         return schedules
 
     def generate_level_schedule(self, level, level_data, teachers):
-
         level_schedule = {"years": []}
         years = level_data.get('years', [])
 

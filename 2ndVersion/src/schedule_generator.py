@@ -6,7 +6,6 @@ logger = logging.getLogger(__name__)
 
 class ScheduleGenerator:
     def __init__(self, level, year, section, rooms, teachers):
-
         self.level = level
         self.year = year
         self.section = section
@@ -20,9 +19,6 @@ class ScheduleGenerator:
         self.num_teachers = len(self.teachers) + 1
 
     def get_assigned_room(self):
-        """
-        Assign a dedicated room to the class (section).
-        """
         section_room_prefix = "MS_Room_" if self.level == "middle_school" else "HS_Room_"
         section_name = self.section['section']
         for room in self.rooms:
@@ -32,9 +28,6 @@ class ScheduleGenerator:
         return None
 
     def time_slots(self, slot):
-        """
-        Helper method to get time slot details.
-        """
         return {
             1: {"start": "8:00", "end": "9:00"},
             2: {"start": "9:00", "end": "10:00"},
@@ -47,12 +40,9 @@ class ScheduleGenerator:
         }.get(slot, {"start": "Unknown", "end": "Unknown"})
 
     def find_suitable_teacher(self, subject_name):
-        """
-        Find teachers who are qualified to teach the given subject.
-        """
         suitable_teachers = [
             teacher for teacher in self.teachers
-            if any(s['name'].lower() == subject_name.lower() for s in teacher['subjects'])
+            if any(s['name'].strip().lower() == subject_name.strip().lower() for s in teacher['subjects'])
         ]
         suitable_teacher_indices = [self.teacher_map[teacher['name']] for teacher in suitable_teachers]
         suitable_teacher_indices.append(self.teacher_map["No teacher available"])
@@ -63,7 +53,7 @@ class ScheduleGenerator:
         session_vars = []
         session_teachers = []
 
-        days = ["dimanche" , "lundi", "mardi", "mercredi", "jeudi"]
+        days = ["dimanche", "lundi", "mardi", "mercredi", "jeudi"]
         num_days = len(days)
         slots = list(range(1, 9))
         num_slots = len(slots)
@@ -95,7 +85,7 @@ class ScheduleGenerator:
                 for s in slots:
                     assigned_sessions = []
                     for idx, (day_var, slot_var, teacher_var) in enumerate(session_vars):
-                        if t == self.num_teachers -1:
+                        if t == self.num_teachers - 1:
                             continue
                         is_assigned = self.model.NewBoolVar(f'session_{idx}_assigned_to_teacher_{t}_day_{d}_slot_{s}')
                         self.model.Add(teacher_var == t).OnlyEnforceIf(is_assigned)
@@ -109,13 +99,13 @@ class ScheduleGenerator:
                         self.model.Add(sum(assigned_sessions) <= 1)
 
         for idx, session in enumerate(sessions):
-            if session['name'].lower() == "sport":
+            if session['name'].strip().lower() == "sport":
                 day_var, slot_var, teacher_var = session_vars[idx]
                 allowed_slot_pairs = [
-                    (1,2),  # 8:00 -10:00
-                    (3,4),  # 10:00 -12:00
-                    (5,6),  # 13:30 -15:30
-                    (7,8)   # 15:30 -17:30
+                    (1, 2),
+                    (3, 4),
+                    (5, 6),
+                    (7, 8)
                 ]
                 possible_start_slots = [pair[0] for pair in allowed_slot_pairs]
                 self.model.AddAllowedAssignments([slot_var], [[s] for s in possible_start_slots])
@@ -130,9 +120,9 @@ class ScheduleGenerator:
                 subject_name = session_teachers[idx]
                 time_start = self.time_slots(slot)['start']
                 time_end = self.time_slots(slot)['end']
-                if subject_name.lower() == "sport":
+                if subject_name.strip().lower() == "sport":
                     slot_pair = None
-                    for pair in [(1,2), (3,4), (5,6), (7,8)]:
+                    for pair in [(1, 2), (3, 4), (5, 6), (7, 8)]:
                         if slot == pair[0]:
                             slot_pair = pair
                             break
@@ -144,7 +134,7 @@ class ScheduleGenerator:
                         slot_str = f"{slot}"
                 else:
                     slot_str = f"{slot}"
-                if teacher_idx == self.num_teachers -1:
+                if teacher_idx == self.num_teachers - 1:
                     teacher_name = "No teacher available"
                 else:
                     teacher_name = self.teachers[teacher_idx]['name']
@@ -165,8 +155,8 @@ class ScheduleGenerator:
                 subject_name = session['name']
                 day = 0
                 slot = 1
-                if subject_name.lower() == "sport":
-                    slot_pair = (1,2)
+                if subject_name.strip().lower() == "sport":
+                    slot_pair = (1, 2)
                     time_start = self.time_slots(slot_pair[0])['start']
                     time_end = self.time_slots(slot_pair[1])['end']
                     slot_str = f"{slot_pair[0]}-{slot_pair[1]}"

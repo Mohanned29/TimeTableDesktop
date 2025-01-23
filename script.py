@@ -20,7 +20,7 @@ def generate_middle_school(years=4, sections_per_year=3):
             section_name = f"{year}M{sec}"
             section_entry = {
                 "section": section_name,
-                "subjects": subjects.copy()
+                "subjects": [dict(subject) for subject in subjects]
             }
             year_entry["sections"].append(section_entry)
         middle_school["years"].append(year_entry)
@@ -60,7 +60,7 @@ def generate_high_school(years=3, streams=["scientifique", "litterature"], secti
                 section_entry = {
                     "section": section_name,
                     "stream": stream,
-                    "subjects": base_subjects[stream].copy()
+                    "subjects": [dict(subject) for subject in base_subjects[stream]]
                 }
                 year_entry["sections"].append(section_entry)
         high_school["years"].append(year_entry)
@@ -113,14 +113,6 @@ def generate_rooms(middle_sections, high_sections):
         }
         rooms.append(room)
     for section in high_sections:
-        if section['stream'] == "sport":
-            room_type = "sport"
-        elif section['stream'] == "scientifique":
-            room_type = "science"
-        elif section['stream'] == "litterature":
-            room_type = "general"
-        else:
-            room_type = "general"
         room = {
             "name": f"HS_Room_{section['section']}",
             "type": "general"
