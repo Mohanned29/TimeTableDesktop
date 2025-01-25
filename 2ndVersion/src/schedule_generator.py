@@ -46,9 +46,7 @@ class ScheduleGenerator:
             if any(s['name'].strip().lower() == normalized_subject for s in teacher['subjects'])
         ]
         suitable_teacher_indices = [self.teacher_map[teacher['name']] for teacher in suitable_teachers]
-        if suitable_teacher_indices:
-            suitable_teacher_indices.append(self.teacher_map["No teacher available"])
-        else:
+        if not suitable_teacher_indices:
             suitable_teacher_indices = [self.teacher_map["No teacher available"]]
         return suitable_teacher_indices
 
