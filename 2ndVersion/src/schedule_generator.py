@@ -76,11 +76,22 @@ class ScheduleGenerator:
             slot_var = self.model.NewIntVar(1, num_slots, f'session_{idx}_slot')
             teacher_var = self.model.NewIntVar(0, self.num_teachers - 1, f'session_{idx}_teacher')
             no_teacher_var = self.model.NewBoolVar(f'session_{idx}_no_teacher')
+            
             self.model.Add(teacher_var == self.teacher_map["No teacher available"]).OnlyEnforceIf(no_teacher_var)
             self.model.Add(teacher_var != self.teacher_map["No teacher available"]).OnlyEnforceIf(no_teacher_var.Not())
+            
             session_vars.append((day_var, slot_var, teacher_var))
             session_teachers.append(session['name'])
             no_teacher_vars.append(no_teacher_var)
+
+        for i in range(len(session_vars)):
+            for j in range(i + 1, len(session_vars)):
+                day_i, slot_i, _ = session_vars[i]
+                day_j, slot_j, _ = session_vars[j]
+                overlap = self.model.NewBoolVar(f'overlap_{i}_{j}')
+                self.model.Add(day_i == day_j).OnlyEnforceIf(overlap)
+                self.model.Add(slot_i == slot_j).OnlyEnforceIf(overlap)
+                self.model.Add(overlap == 0)
 
         for idx, (day_var, slot_var, teacher_var) in enumerate(session_vars):
             subject_name = session_teachers[idx]
@@ -90,33 +101,24 @@ class ScheduleGenerator:
             else:
                 self.model.Add(teacher_var == self.teacher_map["No teacher available"])
 
-        for t in range(self.num_teachers):
-            for d in range(num_days):
-                for s in slots:
-                    assigned_sessions = []
-                    for idx, (day_var, slot_var, teacher_var) in enumerate(session_vars):
-                        if t == self.num_teachers - 1:
-                            continue
-                        is_assigned = self.model.NewBoolVar(f'session_{idx}_assigned_to_teacher_{t}_day_{d}_slot_{s}')
-                        self.model.Add(teacher_var == t).OnlyEnforceIf(is_assigned)
-                        self.model.Add(teacher_var != t).OnlyEnforceIf(is_assigned.Not())
-                        self.model.Add(day_var == d).OnlyEnforceIf(is_assigned)
-                        self.model.Add(day_var != d).OnlyEnforceIf(is_assigned.Not())
-                        self.model.Add(slot_var == s).OnlyEnforceIf(is_assigned)
-                        self.model.Add(slot_var != s).OnlyEnforceIf(is_assigned.Not())
-                        assigned_sessions.append(is_assigned)
-                    if assigned_sessions:
-                        self.model.Add(sum(assigned_sessions) <= 1)
+        for t in range(self.num_teachers - 1):
+            teacher_sessions = [(day_var, slot_var) for day_var, slot_var, teacher_var in session_vars]
+            for i in range(len(teacher_sessions)):
+                for j in range(i + 1, len(teacher_sessions)):
+                    day_i, slot_i = teacher_sessions[i]
+                    day_j, slot_j = teacher_sessions[j]
+                    conflict = self.model.NewBoolVar(f'teacher_{t}_conflict_{i}_{j}')
+                    self.model.Add(day_i == day_j).OnlyEnforceIf(conflict)
+                    self.model.Add(slot_i == slot_j).OnlyEnforceIf(conflict)
+                    self.model.Add(conflict == 0).OnlyEnforceIf([
+                        session_vars[i][2] == t,
+                        session_vars[j][2] == t
+                    ])
 
         for idx, session in enumerate(sessions):
             if session['name'].strip().lower() == "sport":
                 day_var, slot_var, teacher_var = session_vars[idx]
-                allowed_slot_pairs = [
-                    (1, 2),
-                    (3, 4),
-                    (5, 6),
-                    (7, 8)
-                ]
+                allowed_slot_pairs = [(1, 2), (3, 4), (5, 6), (7, 8)]
                 possible_start_slots = [pair[0] for pair in allowed_slot_pairs]
                 self.model.AddAllowedAssignments([slot_var], [[s] for s in possible_start_slots])
 
@@ -130,26 +132,25 @@ class ScheduleGenerator:
                 slot = self.solver.Value(slot_var)
                 teacher_idx = self.solver.Value(teacher_var)
                 subject_name = session_teachers[idx]
-                time_start = self.time_slots(slot)['start']
-                time_end = self.time_slots(slot)['end']
+
                 if subject_name.strip().lower() == "sport":
-                    slot_pair = None
-                    for pair in [(1, 2), (3, 4), (5, 6), (7, 8)]:
-                        if slot == pair[0]:
-                            slot_pair = pair
-                            break
+                    slot_pair = next(((s, e) for s, e in [(1,2), (3,4), (5,6), (7,8)] if s == slot), None)
                     if slot_pair:
-                        time_start = self.time_slots(pair[0])['start']
-                        time_end = self.time_slots(pair[1])['end']
-                        slot_str = f"{pair[0]}-{pair[1]}"
+                        time_start = self.time_slots(slot_pair[0])['start']
+                        time_end = self.time_slots(slot_pair[1])['end']
+                        slot_str = f"{slot_pair[0]}-{slot_pair[1]}"
                     else:
+                        time_start = self.time_slots(slot)['start']
+                        time_end = self.time_slots(slot)['end']
                         slot_str = f"{slot}"
                 else:
+                    time_start = self.time_slots(slot)['start']
+                    time_end = self.time_slots(slot)['end']
                     slot_str = f"{slot}"
-                if teacher_idx == self.num_teachers - 1:
-                    teacher_name = "No teacher available"
-                else:
-                    teacher_name = self.teachers[teacher_idx]['name']
+
+                teacher_name = "No teacher available" if teacher_idx == self.num_teachers - 1 \
+                    else self.teachers[teacher_idx]['name']
+
                 self.schedule.append({
                     "day": days[day],
                     "room": room_name,
@@ -163,6 +164,7 @@ class ScheduleGenerator:
             return self.schedule
         else:
             logger.error("No feasible solution found.")
+            self.schedule = []
             for idx, session in enumerate(sessions):
                 subject_name = session['name']
                 day = 0
