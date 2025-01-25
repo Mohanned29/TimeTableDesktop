@@ -88,10 +88,14 @@ class ScheduleGenerator:
             for j in range(i + 1, len(session_vars)):
                 day_i, slot_i, _ = session_vars[i]
                 day_j, slot_j, _ = session_vars[j]
-                overlap = self.model.NewBoolVar(f'overlap_{i}_{j}')
-                self.model.Add(day_i == day_j).OnlyEnforceIf(overlap)
-                self.model.Add(slot_i == slot_j).OnlyEnforceIf(overlap)
-                self.model.Add(overlap == 0)
+                self.model.Add(day_i != day_j).OnlyEnforceIf([
+                    session_vars[i][0], 
+                    session_vars[j][0]
+                ])
+                self.model.Add(slot_i != slot_j).OnlyEnforceIf([
+                    session_vars[i][1], 
+                    session_vars[j][1]
+                ])
 
         for idx, (day_var, slot_var, teacher_var) in enumerate(session_vars):
             subject_name = session_teachers[idx]
@@ -102,18 +106,15 @@ class ScheduleGenerator:
                 self.model.Add(teacher_var == self.teacher_map["No teacher available"])
 
         for t in range(self.num_teachers - 1):
-            teacher_sessions = [(day_var, slot_var) for day_var, slot_var, teacher_var in session_vars]
-            for i in range(len(teacher_sessions)):
-                for j in range(i + 1, len(teacher_sessions)):
-                    day_i, slot_i = teacher_sessions[i]
-                    day_j, slot_j = teacher_sessions[j]
-                    conflict = self.model.NewBoolVar(f'teacher_{t}_conflict_{i}_{j}')
-                    self.model.Add(day_i == day_j).OnlyEnforceIf(conflict)
-                    self.model.Add(slot_i == slot_j).OnlyEnforceIf(conflict)
-                    self.model.Add(conflict == 0).OnlyEnforceIf([
-                        session_vars[i][2] == t,
-                        session_vars[j][2] == t
-                    ])
+            for i in range(len(session_vars)):
+                for j in range(i + 1, len(session_vars)):
+                    day_i, slot_i, teacher_i = session_vars[i]
+                    day_j, slot_j, teacher_j = session_vars[j]
+                    teacher_constraint = self.model.NewBoolVar(f'teacher_{t}_constraint_{i}_{j}')
+                    self.model.Add(teacher_i == t).OnlyEnforceIf(teacher_constraint)
+                    self.model.Add(teacher_j == t).OnlyEnforceIf(teacher_constraint)
+                    self.model.Add(day_i != day_j).OnlyEnforceIf(teacher_constraint)
+                    self.model.Add(slot_i != slot_j).OnlyEnforceIf(teacher_constraint)
 
         for idx, session in enumerate(sessions):
             if session['name'].strip().lower() == "sport":
