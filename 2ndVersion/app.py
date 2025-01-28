@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, abort
-from src.schedule_manager import ScheduleManager
 import logging
+from src.schedule_manager import ScheduleManager
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -11,36 +11,37 @@ app = Flask(__name__)
 def generate_schedule():
     data = request.json
     if not data:
-        logger.error("No JSON payload received.")
-        abort(400, description="Request body is missing or not in JSON format")
-
+        abort(400, "Request body is missing or not in JSON format")
+    
     try:
-        if 'teachers' not in data or not data['teachers']:
-            logger.error("Teachers data is missing or empty.")
-            abort(400, description="Teachers data is missing or empty")
-        if 'rooms' not in data or not data['rooms']:
-            logger.error("Rooms data is missing or empty.")
-            abort(400, description="Rooms data is missing or empty")
         if 'middle_school' not in data and 'high_school' not in data:
-            logger.error("Neither middle_school nor high_school data provided.")
-            abort(400, description="At least one of 'middle_school' or 'high_school' must be provided")
+            abort(400, "At least one of 'middle_school' or 'high_school' must be provided")
+        
+        rooms = data.get('rooms', [])
+        teachers = data.get('teachers', [])
+        
+        if not rooms:
+            abort(400, "Rooms data is missing or empty")
+        if not teachers:
+            abort(400, "Teachers data is missing or empty")
 
-        schedule_manager = ScheduleManager(data)
+        schedule_manager = ScheduleManager(data, rooms, teachers)
         schedules = schedule_manager.generate_schedules()
 
-        if not schedules:
-            logger.error("Failed to generate schedules due to internal error.")
-            abort(500, description="Failed to generate schedules due to internal error.")
+        logger.info("Successfully generated schedules")
 
-        logger.info("Successfully generated schedules.")
         return jsonify(schedules), 200
-
+    
     except KeyError as e:
-        logger.error(f"Key error: {str(e)}")
-        abort(400, description=f"Missing key in data: {str(e)}")
+        logger.error(f"Key error during schedule generation: {str(e)}")
+        return jsonify({"error": f"Missing key in request data: {str(e)}"}), 400
+    except ValueError as ve:
+        logger.error(f"Validation error: {str(ve)}")
+        return jsonify({"error": str(ve)}), 400
     except Exception as e:
-        logger.error(f"Unexpected error: {str(e)}")
-        abort(500, description=f"Internal server error: {str(e)}")
+        logger.error(f"Unexpected error during schedule generation: {str(e)}")
+        return jsonify({"error": f"Internal server error: {str(e)}"}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True)

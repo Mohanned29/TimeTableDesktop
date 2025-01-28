@@ -5,15 +5,25 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class ScheduleManager:
-    def __init__(self, data):
+    def __init__(self, data, rooms, teachers):
+        """
+        :param data: Dictionary containing 'middle_school' and/or 'high_school' data
+        :param rooms: List of rooms
+        :param teachers: List of teachers
+        """
         self.data = data
-        self.rooms = data.get('rooms', [])
-        self.teachers = data.get('teachers', [])
+        self.rooms = rooms
+        self.teachers = teachers
+        logger.info(f"Total teachers loaded: {len(self.teachers)}")
 
     def generate_schedules(self):
         schedules = {}
-        middle_teachers = [teacher for teacher in self.teachers if teacher['name'].startswith("MS_Teacher_")]
-        high_teachers = [teacher for teacher in self.teachers if teacher['name'].startswith("HS_Teacher_")]
+
+        middle_teachers = [t for t in self.teachers if t['name'].startswith("MS_Teacher_")]
+        high_teachers = [t for t in self.teachers if t['name'].startswith("HS_Teacher_")]
+
+        logger.info(f"Middle school teachers found: {len(middle_teachers)}")
+        logger.info(f"High school teachers found: {len(high_teachers)}")
 
         if 'middle_school' in self.data:
             middle_schedule = self.generate_level_schedule(
@@ -40,12 +50,15 @@ class ScheduleManager:
         for year_entry in years:
             year_number = year_entry.get('year')
             sections = year_entry.get('sections', [])
-            year_schedule = {
+            year_schedule_data = {
                 "year": year_number,
                 "sections": []
             }
 
             for section in sections:
+                logger.info(f"Generating schedule for {level} {year_number} {section['section']}")
+                logger.info(f"Available teachers: {[t['name'] for t in teachers]}")
+
                 generator = ScheduleGenerator(
                     level=level,
                     year=year_number,
@@ -60,8 +73,8 @@ class ScheduleManager:
                     "stream": section.get('stream'),
                     "schedule": schedule
                 }
-                year_schedule["sections"].append(section_schedule)
+                year_schedule_data["sections"].append(section_schedule)
 
-            level_schedule["years"].append(year_schedule)
+            level_schedule["years"].append(year_schedule_data)
 
         return level_schedule
