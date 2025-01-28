@@ -52,7 +52,6 @@ class ScheduleGenerator:
 
     def generate_schedule(self):
         subjects = self.section['subjects']
-
         sessions = []
         for subject in subjects:
             name = subject['name']
@@ -60,76 +59,102 @@ class ScheduleGenerator:
             for _ in range(coef):
                 sessions.append(name)
 
-        num_days = len(self.days)         # e.g. 5
-        num_slots = len(self.time_slots)  # e.g. 8
+        num_days = len(self.days)        # e.g. 5
+        num_slots = len(self.time_slots) # e.g. 8
         num_teachers = len(self.teachers)
         num_sessions = len(sessions)
 
+        #
+        # 1) Create CP-SAT bool variables x[(i, d, s, t)] for valid combos
+        #
         x = {}
         for i in range(num_sessions):
             subject_name = sessions[i]
             suitable_teachers = self.find_suitable_teachers_indices(subject_name)
             for d in range(num_days):
                 for s in range(num_slots):
-                    if subject_name.lower() == "sport":
-                        if s not in [0, 2, 4, 6]:
-                            continue
+                    # Only create "sport" sessions at the valid start slots (0,2,4,6)
+                    if subject_name.lower() == "sport" and s not in [0, 2, 4, 6]:
+                        continue
                     for t in suitable_teachers:
                         x[(i, d, s, t)] = self.model.NewBoolVar(f"x_{i}_{d}_{s}_{t}")
 
+        #
+        # 2) Each session i must be assigned exactly once
+        #
         for i in range(num_sessions):
-            possible_assignments = [key for key in x.keys() if key[0] == i]
-            self.model.Add(sum(x[key] for key in possible_assignments) == 1)
+            # gather all x-variables that correspond to this session i
+            i_keys = [key for key in x.keys() if key[0] == i]
+            self.model.Add(sum(x[k] for k in i_keys) == 1)
 
-        for d in range(num_days):
-            for s in range(num_slots):
-                for t in range(num_teachers):
-                    conflict_sessions = [i for (i2, d2, s2, t2) in x.keys()
-                                        if d2 == d and s2 == s and t2 == t]
-                    if conflict_sessions:
-                        self.model.Add(
-                            sum(x[(i, d, s, t)] for i in conflict_sessions) <= 1
-                        )
+        #
+        # 3) Teacher conflict constraints:
+        #    a) No two sessions share the same (d, s, t)
+        #    b) If a session is Sport and occupies (d,s,t), it blocks (d,s+1,t) too
+        #
 
-                    next_slot = s + 1
-                    if next_slot < num_slots:
-                        for i in conflict_sessions:
-                            if sessions[i].lower() == "sport":
-                                conflict_j = [j for (jj, dd, ss, tt) in x.keys()
-                                            if dd == d and ss == next_slot and tt == t]
-                                for j in conflict_j:
-                                    if j != i:
-                                        self.model.Add(x[(i, d, s, t)] + x[(j, d, next_slot, t)] <= 1)
+        # Instead of looping over 0..(num_days-1), etc., we only loop over the
+        # actual (d,s,t) that appear in x.keys().
+        # Then we group by day/slot/teacher to apply the constraints.
+        from collections import defaultdict
+        
+        # a) For each (d, s, t), collect all i
+        # b) sum(...) <= 1
+        # c) if any i is Sport, block next_slot
+        day_slot_teacher_map = defaultdict(list)
+        for (i2, d2, s2, t2) in x.keys():
+            day_slot_teacher_map[(d2, s2, t2)].append(i2)
 
+        for (d2, s2, t2), conflict_sessions in day_slot_teacher_map.items():
+            # a) Teacher can't teach >1 session in the same day/slot
+            self.model.Add(
+                sum(x[(i2, d2, s2, t2)] for i2 in conflict_sessions) <= 1
+            )
+
+            # b) If a session is Sport at slot s2, it also blocks s2+1
+            #    We'll look for any j in day_slot_teacher_map[(d2, s2+1, t2)]
+            next_slot = s2 + 1
+            if next_slot < num_slots:
+                next_conflict = day_slot_teacher_map.get((d2, next_slot, t2), [])
+                # For each i that’s Sport in conflict_sessions, forbid pairing with j in next_conflict
+                for i in conflict_sessions:
+                    if sessions[i].lower() == "sport":
+                        for j in next_conflict:
+                            if j != i:
+                                self.model.Add(x[(i, d2, s2, t2)] + x[(j, d2, next_slot, t2)] <= 1)
+
+        #
+        # 4) Solve the model
+        #
         solver = cp_model.CpSolver()
         status = solver.Solve(self.model)
 
+        #
+        # 5) Build self.schedule from solution if feasible
+        #
         if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
-            logger.info(f"Found a feasible assignment for section {self.section['section']}.")
-            for i in range(num_sessions):
-                subject_name = sessions[i]
-                for d in range(num_days):
-                    for s in range(num_slots):
-                        for t in range(num_teachers):
-                            if (i, d, s, t) in x:
-                                if solver.Value(x[(i, d, s, t)]) == 1:
-                                    if subject_name.lower() == "sport" and s in [0, 2, 4, 6]:
-                                        time_str = f"{self.time_slots[s]['start']} - {self.time_slots[s+1]['end']}"
-                                        slot_label = f"{s+1}-{s+2}"
-                                    else:
-                                        time_str = f"{self.time_slots[s]['start']} - {self.time_slots[s]['end']}"
-                                        slot_label = f"{s+1}"
+            logger.info(f"Found a feasible assignment for section {self.section['section']}!")
+            # We'll loop directly over x.keys() to avoid any KeyErrors
+            for (i2, d2, s2, t2) in x.keys():
+                if solver.Value(x[(i2, d2, s2, t2)]) == 1:
+                    subject_name = sessions[i2]
+                    if subject_name.lower() == "sport" and s2 in [0,2,4,6]:
+                        time_str = f"{self.time_slots[s2]['start']} - {self.time_slots[s2+1]['end']}"
+                        slot_label = f"{s2+1}-{s2+2}"  # 1-based indexing
+                    else:
+                        time_str = f"{self.time_slots[s2]['start']} - {self.time_slots[s2]['end']}"
+                        slot_label = f"{s2+1}"        # 1-based indexing
 
-                                    self.schedule.append({
-                                        "day": self.days[d],
-                                        "room": self.room,
-                                        "subject": subject_name,
-                                        "teacher": self.teachers[t]['name'],
-                                        "time": time_str,
-                                        "slot": slot_label,
-                                        "section": self.section['section'],
-                                        "stream": self.section.get('stream')
-                                    })
+                    self.schedule.append({
+                        "day": self.days[d2],
+                        "room": self.room,
+                        "subject": subject_name,
+                        "teacher": self.teachers[t2]['name'],
+                        "time": time_str,
+                        "slot": slot_label,
+                        "section": self.section['section'],
+                        "stream": self.section.get('stream')
+                    })
         else:
             logger.error(f"No feasible solution found for section {self.section['section']}!")
 
