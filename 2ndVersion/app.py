@@ -32,7 +32,6 @@ def generate_schedule():
 
         return jsonify(schedules), 200
     
-    
     except KeyError as e:
         logger.error(f"Key error during schedule generation: {str(e)}")
         return jsonify({"error": f"Missing key in request data: {str(e)}"}), 400
